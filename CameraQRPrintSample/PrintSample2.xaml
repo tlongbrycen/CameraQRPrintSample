@@ -1,0 +1,440 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<Page
+    x:Class="CameraQRPrintSample.PrintSample2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CameraQRPrintSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="PrintableArea" Margin="15, 10, 10, 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="GridHeader" Grid.Row="0">
+            <TextBlock x:Name="TextHeader" HorizontalAlignment="Center" TextWrapping="WrapWholeWords">
+                TextHeader
+            </TextBlock>
+        </Grid>
+
+        <Grid x:Name="GridBody" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="8.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="GridPhoto0" Grid.Row="1" Grid.Column="0">
+                <Image x:Name="Photo0" Source="/Assets/StoreLogo.png">
+                    
+                </Image>
+            </Grid>
+            <Grid x:Name="GridPhoto1" Grid.Row="3" Grid.Column="0">
+                <Image x:Name="Photo1" Source="/Assets/StoreLogo.png">
+
+                </Image>
+            </Grid>
+            <Grid x:Name="GridPhoto2" Grid.Row="5" Grid.Column="0">
+                <Image x:Name="Photo2" Source="/Assets/StoreLogo.png">
+
+                </Image>
+            </Grid>
+            <Grid x:Name="GridPhoto3" Grid.Row="7" Grid.Column="0">
+                <Image x:Name="Photo3" Source="/Assets/StoreLogo.png">
+
+                </Image>
+            </Grid>
+
+            <Grid x:Name="GridText0" Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid x:Name="GridText0Line0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridCrewID0" Grid.Column="0">
+                        <TextBlock x:Name="TextCrewID0">
+                            TextCrewID0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCrewName0" Grid.Column="1">
+                        <TextBlock x:Name="TextCrewName0">
+                            TextCrewName0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridDepartment0" Grid.Column="2">
+                        <TextBlock x:Name="TextDepartment0">
+                            TextDepartment0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCarNo0" Grid.Column="3">
+                        <TextBlock x:Name="TextCarNo0">
+                            TextCarNo0
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText0Line1" Grid.Row="1">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText0Line2" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridJudgment0" Grid.Column="0">
+                        <TextBlock x:Name="TextJudgment0">
+                            TextJudgment0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMeasureValue0" Grid.Column="1">
+                        <TextBlock x:Name="TextMeasureValue0">
+                            TextMeasureValue0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridPhotoTime0" Grid.Column="2">
+                        <TextBlock x:Name="TextPhotoTime0">
+                            TextPhotoTime0
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText0Line3" Grid.Row="3">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText0Line4" Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridLongLatitude0" Grid.Column="0">
+                        <TextBlock x:Name="TextLongLatitude0">
+                            TextLongLatitude0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMemo0" Grid.Column="1">
+                        <TextBlock x:Name="TextMemo0">
+                            TextMemo0
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="GridText1" Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid x:Name="GridText1Line0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridCrewID1" Grid.Column="0">
+                        <TextBlock x:Name="TextCrewID1">
+                            TextCrewID1
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCrewName1" Grid.Column="1">
+                        <TextBlock x:Name="TextCrewName1">
+                            TextCrewName1
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridDepartment1" Grid.Column="2">
+                        <TextBlock x:Name="TextDepartment1">
+                            TextDepartment1
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCarNo1" Grid.Column="3">
+                        <TextBlock x:Name="TextCarNo1">
+                            TextCarNo1
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText1Line1" Grid.Row="1">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText1Line2" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridJudgment1" Grid.Column="0">
+                        <TextBlock x:Name="TextJudgment1">
+                            TextJudgment1
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMeasureValue1" Grid.Column="1">
+                        <TextBlock x:Name="TextMeasureValue1">
+                            TextMeasureValue0
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridPhotoTime1" Grid.Column="2">
+                        <TextBlock x:Name="TextPhotoTime1">
+                            TextPhotoTime1
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText1Line3" Grid.Row="3">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText1Line4" Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridLongLatitude1" Grid.Column="0">
+                        <TextBlock x:Name="TextLongLatitude1">
+                            TextLongLatitude1
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMemo1" Grid.Column="1">
+                        <TextBlock x:Name="TextMemo1">
+                            TextMemo1
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="GridText2" Grid.Row="5" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid x:Name="GridText2Line0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridCrewID2" Grid.Column="0">
+                        <TextBlock x:Name="TextCrewID2">
+                            TextCrewID2
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCrewName2" Grid.Column="1">
+                        <TextBlock x:Name="TextCrewName2">
+                            TextCrewName2
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridDepartment2" Grid.Column="2">
+                        <TextBlock x:Name="TextDepartment2">
+                            TextDepartment2
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCarNo2" Grid.Column="3">
+                        <TextBlock x:Name="TextCarNo2">
+                            TextCarNo0
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText2Line1" Grid.Row="1">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText2Line2" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridJudgment2" Grid.Column="0">
+                        <TextBlock x:Name="TextJudgment2">
+                            TextJudgment2
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMeasureValue2" Grid.Column="1">
+                        <TextBlock x:Name="TextMeasureValue2">
+                            TextMeasureValue2
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridPhotoTime2" Grid.Column="2">
+                        <TextBlock x:Name="TextPhotoTime2">
+                            TextPhotoTime2
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText2Line3" Grid.Row="3">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText2Line4" Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridLongLatitude2" Grid.Column="0">
+                        <TextBlock x:Name="TextLongLatitude2">
+                            TextLongLatitude2
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMemo2" Grid.Column="1">
+                        <TextBlock x:Name="TextMemo2">
+                            TextMemo0
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="GridText3" Grid.Row="7" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid x:Name="GridText3Line0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridCrewID3" Grid.Column="0">
+                        <TextBlock x:Name="TextCrewID3">
+                            TextCrewID3
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCrewName3" Grid.Column="1">
+                        <TextBlock x:Name="TextCrewName3">
+                            TextCrewName3
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridDepartment3" Grid.Column="2">
+                        <TextBlock x:Name="TextDepartment3">
+                            TextDepartment3
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridCarNo3" Grid.Column="3">
+                        <TextBlock x:Name="TextCarNo3">
+                            TextCarNo3
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText3Line1" Grid.Row="1">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText3Line2" Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridJudgment3" Grid.Column="0">
+                        <TextBlock x:Name="TextJudgment3">
+                            TextJudgment3
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMeasureValue3" Grid.Column="1">
+                        <TextBlock x:Name="TextMeasureValue3">
+                            TextMeasureValue3
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridPhotoTime3" Grid.Column="2">
+                        <TextBlock x:Name="TextPhotoTime3">
+                            TextPhotoTime3
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="GridText3Line3" Grid.Row="3">
+                    <TextBlock>
+                        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                    </TextBlock>
+                </Grid>
+
+                <Grid x:Name="GridText3Line4" Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="GridLongLatitude3" Grid.Column="0">
+                        <TextBlock x:Name="TextLongLatitude3">
+                            TextLongLatitude3
+                        </TextBlock>
+                    </Grid>
+                    <Grid x:Name="GridMemo3" Grid.Column="1">
+                        <TextBlock x:Name="TextMemo3">
+                            TextMemo3
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <Grid x:Name="GridFooter" Grid.Row="2">
+            <TextBlock x:Name="TextFooter" HorizontalAlignment="Right" Margin="15, 10, 10, 10">
+                TextFooter
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>
