@@ -17,16 +17,17 @@ namespace CameraQRPrintSample
             this.page = page;
         }
 
-        private TextBlock GetTextBlockByName(string name)
+        public TextBlock GetTextBlockByName(string name)
         {
             TextBlock textBlock = (TextBlock)page.FindName(name);
             return textBlock;
         }
 
-        private void FillTextBlockWithText(TextBlock textBlock, string textToWrite)
+        public void FillTextBlockWithText(TextBlock textBlock, string textToWrite)
         {
             Run textRun = new Run();
             textRun.Text = textToWrite;
+            textBlock.Inlines.Clear();
             textBlock.Inlines.Add(textRun);
         }
     }
