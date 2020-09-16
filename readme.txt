@@ -1,0 +1,3 @@
+- QR Scan
+- Camera Selection
+- Print
