@@ -1,0 +1,327 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+
+<Page
+    x:Class="CameraQRPrintSample.PrintSample1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CameraQRPrintSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="PrintableArea" Margin="15, 10, 10, 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="GridHeader" Grid.Row="0">
+            <RichTextBlock x:Name="TextHeader" TextWrapping="WrapWholeWords">
+                <Paragraph FontSize="20" TextAlignment="Center">ALBLO</Paragraph>
+                <Paragraph FontSize="18" TextAlignment="Center">測定結果一覧</Paragraph>
+            </RichTextBlock>
+        </Grid>
+
+        <Grid x:Name="GridDate" Grid.Row="1">
+            <TextBlock x:Name="TextDate" TextAlignment="Right">
+                
+            </TextBlock>
+        </Grid>
+
+        <Grid x:Name="GridPageNumber" Grid.Row="2">
+            <TextBlock x:Name="TextPageNumber" TextAlignment="Right">
+                
+            </TextBlock>
+        </Grid>
+
+        <Grid x:Name="GridBody" Grid.Row="3" BorderBrush="Black" BorderThickness="1">
+            <!--Create rows and columns for table-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--Title Line-->
+            <Grid x:Name="GridTitleJudgment" Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleJudgment" HorizontalAlignment="Center">
+                    判定
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleMeasureValue" Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleMeasureValue" HorizontalAlignment="Center">
+                    測定値
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleDevice" Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleDevice" HorizontalAlignment="Center">
+                    器機
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitlePhotoTime" Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitlePhotoTime" HorizontalAlignment="Center">
+                    撮影時間
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleOutReturn" Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleOutReturn" HorizontalAlignment="Center">
+                    出/帰
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleCarNo" Grid.Row="0" Grid.Column="5" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleCarNo" HorizontalAlignment="Center">
+                    車番
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleDepartment" Grid.Row="0" Grid.Column="6" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleDepartment" HorizontalAlignment="Center">
+                    所属
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleCrewID" Grid.Row="0" Grid.Column="7" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleCrewID" HorizontalAlignment="Center">
+                    乗務員ID
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleCrewName" Grid.Row="0" Grid.Column="8" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleCrewName" HorizontalAlignment="Center">
+                    乗務員名
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleLongLatitude" Grid.Row="0" Grid.Column="9" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleLongLatitude" HorizontalAlignment="Center">
+                    緯度、経度
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleMemo" Grid.Row="0" Grid.Column="10" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleMemo" HorizontalAlignment="Center">
+                    メモ
+                </TextBlock>
+            </Grid>
+
+            <!--1st Row-->
+            <Grid x:Name="GridJudgment0" Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextJudgment0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMeasureValue0" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMeasureValue0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDevice0" Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDevice0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridPhotoTime0" Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextPhotoTime0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridOutReturn0" Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextOutReturn0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCarNo0" Grid.Row="1" Grid.Column="5" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCarNo0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDepartment0" Grid.Row="1" Grid.Column="6" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDepartment0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewID0" Grid.Row="1" Grid.Column="7" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewID0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewName0" Grid.Row="1" Grid.Column="8" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewName0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleLongLatitude0" Grid.Row="1" Grid.Column="9" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleLongLatitude0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMemo0" Grid.Row="1" Grid.Column="10" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMemo0" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+
+            <!--2nd Row-->
+            <Grid x:Name="GridJudgment1" Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextJudgment1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMeasureValue1" Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMeasureValue1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDevice1" Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDevice1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridPhotoTime1" Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextPhotoTime1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridOutReturn1" Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextOutReturn1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCarNo1" Grid.Row="2" Grid.Column="5" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCarNo1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDepartment1" Grid.Row="2" Grid.Column="6" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDepartment1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewID1" Grid.Row="2" Grid.Column="7" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewID1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewName1" Grid.Row="2" Grid.Column="8" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewName1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleLongLatitude1" Grid.Row="2" Grid.Column="9" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleLongLatitude1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMemo1" Grid.Row="2" Grid.Column="10" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMemo1" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+
+            <!--3rd Row-->
+            <Grid x:Name="GridJudgment2" Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextJudgment2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMeasureValue2" Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMeasureValue2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDevice2" Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDevice2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridPhotoTime2" Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextPhotoTime2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridOutReturn2" Grid.Row="3" Grid.Column="4" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextOutReturn2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCarNo2" Grid.Row="3" Grid.Column="5" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCarNo2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDepartment2" Grid.Row="3" Grid.Column="6" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDepartment2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewID2" Grid.Row="3" Grid.Column="7" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewID2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewName2" Grid.Row="3" Grid.Column="8" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewName2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleLongLatitude2" Grid.Row="3" Grid.Column="9" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleLongLatitude2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMemo2" Grid.Row="3" Grid.Column="10" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMemo2" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+
+            <!--4rd Row-->
+            <Grid x:Name="GridJudgment3" Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextJudgment3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMeasureValue3" Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMeasureValue3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDevice3" Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDevice3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridPhotoTime3" Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextPhotoTime3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridOutReturn3" Grid.Row="4" Grid.Column="4" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextOutReturn3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCarNo3" Grid.Row="4" Grid.Column="5" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCarNo3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridDepartment3" Grid.Row="4" Grid.Column="6" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextDepartment3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewID3" Grid.Row="4" Grid.Column="7" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewID3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridCrewName3" Grid.Row="4" Grid.Column="8" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextCrewName3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridTitleLongLatitude3" Grid.Row="4" Grid.Column="9" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextTitleLongLatitude3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="GridMemo3" Grid.Row="4" Grid.Column="10" BorderBrush="Black" BorderThickness="1">
+                <TextBlock x:Name="TextMemo3" HorizontalAlignment="Center">
+                </TextBlock>
+            </Grid>
+
+        </Grid>
+
+        <Grid x:Name="GridFooter" Grid.Row="4">
+            <TextBlock x:Name="TextFooter" HorizontalAlignment="Right" Margin="15, 10, 10, 10">
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>

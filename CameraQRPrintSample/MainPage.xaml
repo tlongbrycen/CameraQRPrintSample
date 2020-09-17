@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="ButtonPrint" Content="Print" Click="ButtonPrint_Click" Margin="112,159,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonPrint2" Content="Print2" Click="ButtonPrint2_Click" Margin="112,159,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

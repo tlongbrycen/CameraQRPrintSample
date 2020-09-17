@@ -37,9 +37,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
-    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image" />
     <RootType FullName="CameraQRPrintSample.PrintSample2" />
   </Roots.RootTypes>
 </Roots>

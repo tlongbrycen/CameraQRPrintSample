@@ -125,6 +125,9 @@
     </Compile>
     <Compile Include="PageController.cs" />
     <Compile Include="PrintController.cs" />
+    <Compile Include="PrintSample1.xaml.cs">
+      <DependentUpon>PrintSample1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrintSample2.xaml.cs">
       <DependentUpon>PrintSample2.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrintSample1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

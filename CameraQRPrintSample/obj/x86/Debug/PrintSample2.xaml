@@ -49,22 +49,22 @@
             </Grid.ColumnDefinitions>
 
             <Grid x:ConnectionId='7' x:Name="GridPhoto0" Grid.Row="1" Grid.Column="0">
-                <Image x:ConnectionId='110' x:Name="Photo0" Source="/Assets/StoreLogo.png">
+                <Image x:ConnectionId='110' x:Name="Photo0">
 
                 </Image>
             </Grid>
             <Grid x:ConnectionId='8' x:Name="GridPhoto1" Grid.Row="3" Grid.Column="0">
-                <Image x:ConnectionId='109' x:Name="Photo1" Source="/Assets/StoreLogo.png">
+                <Image x:ConnectionId='109' x:Name="Photo1">
 
                 </Image>
             </Grid>
             <Grid x:ConnectionId='9' x:Name="GridPhoto2" Grid.Row="5" Grid.Column="0">
-                <Image x:ConnectionId='108' x:Name="Photo2" Source="/Assets/StoreLogo.png">
+                <Image x:ConnectionId='108' x:Name="Photo2">
 
                 </Image>
             </Grid>
             <Grid x:ConnectionId='10' x:Name="GridPhoto3" Grid.Row="7" Grid.Column="0">
-                <Image x:ConnectionId='107' x:Name="Photo3" Source="/Assets/StoreLogo.png">
+                <Image x:ConnectionId='107' x:Name="Photo3">
 
                 </Image>
             </Grid>
@@ -86,22 +86,22 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='99' x:Name="GridCrewID0" Grid.Column="0">
                         <TextBlock x:ConnectionId='106' x:Name="TextCrewID0">
-                            TextCrewID0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='100' x:Name="GridCrewName0" Grid.Column="1">
                         <TextBlock x:ConnectionId='105' x:Name="TextCrewName0" FontStretch="Normal">
-                            TextCrewName0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='101' x:Name="GridDepartment0" Grid.Column="2">
                         <TextBlock x:ConnectionId='104' x:Name="TextDepartment0">
-                            TextDepartment0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='102' x:Name="GridCarNo0" Grid.Column="3">
                         <TextBlock x:ConnectionId='103' x:Name="TextCarNo0">
-                            TextCarNo0
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -120,17 +120,17 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='93' x:Name="GridJudgment0" Grid.Column="0">
                         <TextBlock x:ConnectionId='98' x:Name="TextJudgment0">
-                            TextJudgment0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='94' x:Name="GridMeasureValue0" Grid.Column="1">
                         <TextBlock x:ConnectionId='97' x:Name="TextMeasureValue0">
-                            TextMeasureValue0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='95' x:Name="GridPhotoTime0" Grid.Column="2">
                         <TextBlock x:ConnectionId='96' x:Name="TextPhotoTime0">
-                            TextPhotoTime0
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -148,12 +148,12 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='89' x:Name="GridLongLatitude0" Grid.Column="0">
                         <TextBlock x:ConnectionId='92' x:Name="TextLongLatitude0">
-                            TextLongLatitude0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='90' x:Name="GridMemo0" Grid.Column="1">
                         <TextBlock x:ConnectionId='91' x:Name="TextMemo0">
-                            TextMemo0
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -176,22 +176,22 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='76' x:Name="GridCrewID1" Grid.Column="0">
                         <TextBlock x:ConnectionId='83' x:Name="TextCrewID1">
-                            TextCrewID1
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='77' x:Name="GridCrewName1" Grid.Column="1">
                         <TextBlock x:ConnectionId='82' x:Name="TextCrewName1">
-                            TextCrewName1
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='78' x:Name="GridDepartment1" Grid.Column="2">
                         <TextBlock x:ConnectionId='81' x:Name="TextDepartment1">
-                            TextDepartment1
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='79' x:Name="GridCarNo1" Grid.Column="3">
                         <TextBlock x:ConnectionId='80' x:Name="TextCarNo1">
-                            TextCarNo1
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -210,17 +210,17 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='70' x:Name="GridJudgment1" Grid.Column="0">
                         <TextBlock x:ConnectionId='75' x:Name="TextJudgment1">
-                            TextJudgment1
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='71' x:Name="GridMeasureValue1" Grid.Column="1">
                         <TextBlock x:ConnectionId='74' x:Name="TextMeasureValue1">
-                            TextMeasureValue0
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='72' x:Name="GridPhotoTime1" Grid.Column="2">
                         <TextBlock x:ConnectionId='73' x:Name="TextPhotoTime1">
-                            TextPhotoTime1
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -238,12 +238,12 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='66' x:Name="GridLongLatitude1" Grid.Column="0">
                         <TextBlock x:ConnectionId='69' x:Name="TextLongLatitude1">
-                            TextLongLatitude1
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='67' x:Name="GridMemo1" Grid.Column="1">
                         <TextBlock x:ConnectionId='68' x:Name="TextMemo1">
-                            TextMemo1
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -266,22 +266,22 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='53' x:Name="GridCrewID2" Grid.Column="0">
                         <TextBlock x:ConnectionId='60' x:Name="TextCrewID2">
-                            TextCrewID2
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='54' x:Name="GridCrewName2" Grid.Column="1">
                         <TextBlock x:ConnectionId='59' x:Name="TextCrewName2">
-                            TextCrewName2
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='55' x:Name="GridDepartment2" Grid.Column="2">
                         <TextBlock x:ConnectionId='58' x:Name="TextDepartment2">
-                            TextDepartment2
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='56' x:Name="GridCarNo2" Grid.Column="3">
                         <TextBlock x:ConnectionId='57' x:Name="TextCarNo2">
-                            TextCarNo0
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -300,17 +300,17 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='47' x:Name="GridJudgment2" Grid.Column="0">
                         <TextBlock x:ConnectionId='52' x:Name="TextJudgment2">
-                            TextJudgment2
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='48' x:Name="GridMeasureValue2" Grid.Column="1">
                         <TextBlock x:ConnectionId='51' x:Name="TextMeasureValue2">
-                            TextMeasureValue2
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='49' x:Name="GridPhotoTime2" Grid.Column="2">
                         <TextBlock x:ConnectionId='50' x:Name="TextPhotoTime2">
-                            TextPhotoTime2
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -328,12 +328,12 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='43' x:Name="GridLongLatitude2" Grid.Column="0">
                         <TextBlock x:ConnectionId='46' x:Name="TextLongLatitude2">
-                            TextLongLatitude2
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='44' x:Name="GridMemo2" Grid.Column="1">
                         <TextBlock x:ConnectionId='45' x:Name="TextMemo2">
-                            TextMemo0
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -356,22 +356,22 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='30' x:Name="GridCrewID3" Grid.Column="0">
                         <TextBlock x:ConnectionId='37' x:Name="TextCrewID3">
-                            TextCrewID3
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='31' x:Name="GridCrewName3" Grid.Column="1">
                         <TextBlock x:ConnectionId='36' x:Name="TextCrewName3">
-                            TextCrewName3
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='32' x:Name="GridDepartment3" Grid.Column="2">
                         <TextBlock x:ConnectionId='35' x:Name="TextDepartment3">
-                            TextDepartment3
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='33' x:Name="GridCarNo3" Grid.Column="3">
                         <TextBlock x:ConnectionId='34' x:Name="TextCarNo3">
-                            TextCarNo3
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -390,17 +390,17 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='24' x:Name="GridJudgment3" Grid.Column="0">
                         <TextBlock x:ConnectionId='29' x:Name="TextJudgment3">
-                            TextJudgment3
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='25' x:Name="GridMeasureValue3" Grid.Column="1">
                         <TextBlock x:ConnectionId='28' x:Name="TextMeasureValue3">
-                            TextMeasureValue3
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='26' x:Name="GridPhotoTime3" Grid.Column="2">
                         <TextBlock x:ConnectionId='27' x:Name="TextPhotoTime3">
-                            TextPhotoTime3
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>
@@ -418,12 +418,12 @@
                     </Grid.ColumnDefinitions>
                     <Grid x:ConnectionId='20' x:Name="GridLongLatitude3" Grid.Column="0">
                         <TextBlock x:ConnectionId='23' x:Name="TextLongLatitude3">
-                            TextLongLatitude3
+                            
                         </TextBlock>
                     </Grid>
                     <Grid x:ConnectionId='21' x:Name="GridMemo3" Grid.Column="1">
                         <TextBlock x:ConnectionId='22' x:Name="TextMemo3">
-                            TextMemo3
+                            
                         </TextBlock>
                     </Grid>
                 </Grid>

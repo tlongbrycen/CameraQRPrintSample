@@ -39,7 +39,7 @@ namespace CameraQRPrintSample
         }
 
 
-        private async void ButtonPrint_Click(object sender, RoutedEventArgs e)
+        private async void ButtonPrint2_Click(object sender, RoutedEventArgs e)
         {
             // Write dummy data to pages
             FillPrintSample2WithDummyData();
@@ -68,7 +68,13 @@ namespace CameraQRPrintSample
                     pageController.SetPage(printSample2);
                     printSample2s.Add(printSample2);
                 }
-                TextBlock textBlock = pageController.GetTextBlockByName("TextCrewID" + position.ToString());
+                TextBlock textBlock = pageController.GetTextBlockByName("TextDate");
+                pageController.FillTextBlockWithText(textBlock, DateTime.Now.ToString());
+                textBlock = pageController.GetTextBlockByName("TextPageNumber");
+                pageController.FillTextBlockWithText(textBlock, printSample2s.Count().ToString());
+                Image img = pageController.GetImageByName("Photo" + position.ToString());
+                pageController.SetImageSource(img, "ms-appx:///Assets/StoreLogo.png");
+                textBlock = pageController.GetTextBlockByName("TextCrewID" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, "乗務員ID:" + dummyData.crewDatas[i].crewID);
                 textBlock = pageController.GetTextBlockByName("TextCrewName" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, "乗務員名:" + dummyData.crewDatas[i].crewName);
@@ -83,7 +89,7 @@ namespace CameraQRPrintSample
                 textBlock = pageController.GetTextBlockByName("TextPhotoTime" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, "撮影時間:" + dummyData.crewDatas[i].photoTime);
                 textBlock = pageController.GetTextBlockByName("TextLongLatitude" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "緯度、軽度:" + dummyData.crewDatas[i].longLatitude);
+                pageController.FillTextBlockWithText(textBlock, "緯度、経度:" + dummyData.crewDatas[i].longLatitude);
                 textBlock = pageController.GetTextBlockByName("TextMemo" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, "メモ:" + dummyData.crewDatas[i].memo);
             }

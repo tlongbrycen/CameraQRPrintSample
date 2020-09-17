@@ -12,10 +12,5 @@ namespace CameraQRPrintSample
         {
             this.InitializeComponent();
         }
-
-        private void Photo0_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
