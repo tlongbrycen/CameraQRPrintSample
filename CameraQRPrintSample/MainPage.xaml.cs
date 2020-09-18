@@ -22,11 +22,12 @@ namespace CameraQRPrintSample
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        List<Scenario> scenarios = new List<Scenario>
+        {
+            new Scenario() { Title="Camera Selection", ClassType=typeof(CameraSelect)},
+            new Scenario() { Title="Export PDF", ClassType=typeof(ExportPDF)},
+        };
 
-        PrintController printController;
-        PrintSample2 printSample2;
-        List<PrintSample2> printSample2s;
-        PageController pageController;
         public MainPage()
         {
             this.InitializeComponent();
@@ -34,66 +35,23 @@ namespace CameraQRPrintSample
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            printController = new PrintController(this);
-            printController.RegisterForPrinting();
+            var itemCollection = new List<Scenario>();
+            int i = 1;
+            foreach (Scenario s in scenarios)
+            {
+                itemCollection.Add(new Scenario { Title = $"{i++}) {s.Title}", ClassType = s.ClassType });
+            }
+            ListMenu.ItemsSource = itemCollection;
         }
 
-
-        private async void ButtonPrint2_Click(object sender, RoutedEventArgs e)
+        private void ListMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // Write dummy data to pages
-            FillPrintSample2WithDummyData();
-            // Add pages to print list
-            List<Page> printPages = new List<Page>();
-            for(int i = 0; i < printSample2s.Count(); i++)
+            ListBox scenarioListBox = sender as ListBox;
+            Scenario s = scenarioListBox.SelectedItem as Scenario;
+            if (s != null)
             {
-                printPages.Add(printSample2s[i]);
+                ScenarioFrame.Navigate(s.ClassType);
             }
-            printController.SetPrintPages(printPages);
-            // Show print preview
-            await printController.ShowPrintUIAsync();
-        }
-
-        private void FillPrintSample2WithDummyData()
-        {
-            printSample2s = new List<PrintSample2>();
-            DummyData dummyData = new DummyData();
-            for (int i = 0; i < dummyData.crewDatas.Count(); i++)
-            {
-                int position = i % 4;
-                if (position == 0)
-                {
-                    pageController = new PageController();
-                    printSample2 = new PrintSample2();
-                    pageController.SetPage(printSample2);
-                    printSample2s.Add(printSample2);
-                }
-                TextBlock textBlock = pageController.GetTextBlockByName("TextDate");
-                pageController.FillTextBlockWithText(textBlock, DateTime.Now.ToString());
-                textBlock = pageController.GetTextBlockByName("TextPageNumber");
-                pageController.FillTextBlockWithText(textBlock, printSample2s.Count().ToString());
-                Image img = pageController.GetImageByName("Photo" + position.ToString());
-                pageController.SetImageSource(img, "ms-appx:///Assets/StoreLogo.png");
-                textBlock = pageController.GetTextBlockByName("TextCrewID" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "乗務員ID:" + dummyData.crewDatas[i].crewID);
-                textBlock = pageController.GetTextBlockByName("TextCrewName" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "乗務員名:" + dummyData.crewDatas[i].crewName);
-                textBlock = pageController.GetTextBlockByName("TextDepartment" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "所属:" + dummyData.crewDatas[i].department);
-                textBlock = pageController.GetTextBlockByName("TextCarNo" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "車番:" + dummyData.crewDatas[i].carNo);
-                textBlock = pageController.GetTextBlockByName("TextJudgment" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "判定:" + dummyData.crewDatas[i].judgment);
-                textBlock = pageController.GetTextBlockByName("TextMeasureValue" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "測定値:" + dummyData.crewDatas[i].measureValue);
-                textBlock = pageController.GetTextBlockByName("TextPhotoTime" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "撮影時間:" + dummyData.crewDatas[i].photoTime);
-                textBlock = pageController.GetTextBlockByName("TextLongLatitude" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "緯度、経度:" + dummyData.crewDatas[i].longLatitude);
-                textBlock = pageController.GetTextBlockByName("TextMemo" + position.ToString());
-                pageController.FillTextBlockWithText(textBlock, "メモ:" + dummyData.crewDatas[i].memo);
-            }
-
         }
     }
 }

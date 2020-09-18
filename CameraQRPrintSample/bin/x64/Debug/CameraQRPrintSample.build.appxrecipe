@@ -70,6 +70,12 @@
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\CameraSelect.xbf">
+      <PackagePath>CameraSelect.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\ExportPDF.xbf">
+      <PackagePath>ExportPDF.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>

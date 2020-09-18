@@ -9,7 +9,33 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="ButtonPrint2" Content="Print2" Click="ButtonPrint2_Click" Margin="112,159,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="GridMenu" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="9.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid x:Name="GridMenuTitle" Grid.Row="0">
+                <TextBlock FontSize="20">Menu</TextBlock>
+            </Grid>
+            <Grid x:Name="GridMenuSelect" Grid.Row="1">
+                <ListBox x:Name="ListMenu" SelectionChanged="ListMenu_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Scenario">
+                            <TextBlock Text="{x:Bind Title}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
 
+        <Grid x:Name="GridScenario" Grid.Column="1">
+            <Frame x:Name="ScenarioFrame">
+                
+            </Frame>
+        </Grid>
     </Grid>
 </Page>

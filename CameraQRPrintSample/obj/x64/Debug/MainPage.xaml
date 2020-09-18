@@ -9,8 +9,34 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:ConnectionId='2' x:Name="ButtonPrint2" Content="Print2"                            Margin="112,159,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid x:ConnectionId='2' x:Name="GridMenu" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="9.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid x:ConnectionId='5' x:Name="GridMenuTitle" Grid.Row="0">
+                <TextBlock FontSize="20">Menu</TextBlock>
+            </Grid>
+            <Grid x:ConnectionId='6' x:Name="GridMenuSelect" Grid.Row="1">
+                <ListBox x:ConnectionId='7' x:Name="ListMenu"                                             >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate                            >
+                            <TextBlock x:ConnectionId='9'                      />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
 
+        <Grid x:ConnectionId='3' x:Name="GridScenario" Grid.Column="1">
+            <Frame x:ConnectionId='4' x:Name="ScenarioFrame">
+                
+            </Frame>
+        </Grid>
     </Grid>
 </Page>
 

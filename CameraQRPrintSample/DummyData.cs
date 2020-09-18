@@ -19,6 +19,8 @@ namespace CameraQRPrintSample
             public string photoTime;
             public string longLatitude;
             public string memo;
+            public string device;
+            public string outReturn;
 
             public CrewData(bool dummy = true)
             {
@@ -33,6 +35,8 @@ namespace CameraQRPrintSample
                     photoTime = "2020/09/16 15:03 JST";
                     longLatitude = "31 14";
                     memo = "これはただダミーデータだけです";
+                    device = "FC1500";
+                    outReturn = "出庫";
                 }
             }
         }
