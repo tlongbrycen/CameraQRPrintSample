@@ -71,10 +71,8 @@ namespace CameraQRPrintSample
                     printSample2s.Add(printSample2);
                 }
                 TextBlock textBlock = pageController.GetTextBlockByName("TextDate");
-                pageController.FillTextBlockWithText(textBlock, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                textBlock = pageController.GetTextBlockByName("TextPageNumber");
-                pageController.FillTextBlockWithText(textBlock, printSample2s.Count().ToString());
-
+                pageController.FillTextBlockWithText(textBlock, "出力目時 " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                
                 Image img = pageController.GetImageByName("Photo" + position.ToString());
                 pageController.SetImageSource(img, "ms-appx:///Assets/StoreLogo.png");
                 textBlock = pageController.GetTextBlockByName("TextCrewID" + position.ToString());
@@ -95,6 +93,17 @@ namespace CameraQRPrintSample
                 pageController.FillTextBlockWithText(textBlock, "緯度、経度:" + dummyData.crewDatas[i].longLatitude);
                 textBlock = pageController.GetTextBlockByName("TextMemo" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, "メモ:" + dummyData.crewDatas[i].memo);
+
+                textBlock = pageController.GetTextBlockByName("UnderLine1Text" + position.ToString());
+                pageController.FillTextBlockWithText(textBlock, "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                textBlock = pageController.GetTextBlockByName("UnderLine2Text" + position.ToString());
+                pageController.FillTextBlockWithText(textBlock, "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            }
+            for(int i = 0; i < printSample2s.Count(); i++)
+            {
+                pageController.SetPage(printSample2s[i]);
+                TextBlock textBlock = pageController.GetTextBlockByName("TextPageNumber");
+                pageController.FillTextBlockWithText(textBlock, (i+1).ToString() + "/" + printSample2s.Count().ToString());
             }
 
         }

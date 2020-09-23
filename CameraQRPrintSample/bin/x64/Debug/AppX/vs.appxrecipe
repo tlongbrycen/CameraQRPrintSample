@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-09-23T05:22:26.941</Modified>
+      <Modified>2020-09-23T05:44:45.190</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\CameraQRPrintSample.exe">
       <PackagePath>entrypoint\CameraQRPrintSample.exe</PackagePath>
-      <Modified>2020-09-23T05:22:26.001</Modified>
+      <Modified>2020-09-23T05:44:43.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.10\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -94,31 +94,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.749</Modified>
+      <Modified>2020-09-23T05:42:54.493</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\CameraSelect.xbf">
       <PackagePath>CameraSelect.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.749</Modified>
+      <Modified>2020-09-23T05:42:54.493</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\ExportPDF.xbf">
       <PackagePath>ExportPDF.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.749</Modified>
+      <Modified>2020-09-23T05:42:54.493</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.750</Modified>
+      <Modified>2020-09-23T05:42:54.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\PrintSample1.xbf">
       <PackagePath>PrintSample1.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.734</Modified>
+      <Modified>2020-09-23T05:42:54.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\PrintSample2.xbf">
       <PackagePath>PrintSample2.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.748</Modified>
+      <Modified>2020-09-23T05:42:54.492</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\QRScan.xbf">
       <PackagePath>QRScan.xbf</PackagePath>
-      <Modified>2020-09-23T05:22:25.750</Modified>
+      <Modified>2020-09-23T05:42:54.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -130,7 +130,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tlong\source\repos\CameraQRPrintSample\CameraQRPrintSample\bin\x64\Debug\Core\CameraQRPrintSample.exe">
       <PackagePath>CameraQRPrintSample.exe</PackagePath>
-      <Modified>2020-09-23T05:22:26.936</Modified>
+      <Modified>2020-09-23T05:44:45.186</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
