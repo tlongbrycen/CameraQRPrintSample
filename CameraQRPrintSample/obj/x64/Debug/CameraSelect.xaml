@@ -9,7 +9,27 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ComboBox x:ConnectionId='2' x:Name="ComboBoxCamera" Text="Camera Select" Margin="51,47,0,0"                                                    Width="246"></ComboBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ComboBox x:ConnectionId='3' x:Name="ComboBoxCamera" Text="Camera Select" Margin="51,47,0,0"                                                    Width="246"></ComboBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <CaptureElement x:ConnectionId='2' x:Name="cameraPreview"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
 

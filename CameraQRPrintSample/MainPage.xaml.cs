@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QRScannerUWP;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace CameraQRPrintSample
         List<Scenario> scenarios = new List<Scenario>
         {
             new Scenario() { Title="Camera Selection", ClassType=typeof(CameraSelect)},
+            new Scenario() { Title="QR Scan", ClassType=typeof(QRScan)},
             new Scenario() { Title="Export PDF", ClassType=typeof(ExportPDF)},
         };
 

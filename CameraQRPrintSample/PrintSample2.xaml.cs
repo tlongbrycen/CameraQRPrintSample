@@ -13,6 +13,6 @@ namespace CameraQRPrintSample
             this.InitializeComponent();
         }
 
-        public const int LINE_NUM = 4;
+        public const int LINE_NUM = 6;
     }
 }

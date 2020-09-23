@@ -26,7 +26,18 @@ namespace CameraQRPrintSample
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             printController = new PrintController(this);
-            printController.RegisterForPrinting();
+            // This try-catch block is indispensable because
+            // When switching among tabs in menu
+            // the RegisterForPrinting() runs one time
+            // Redo the RegisterForPrinting() raises an exception
+            try
+            {
+                printController.RegisterForPrinting();
+            }
+            catch(Exception)
+            {
+
+            }
         }
 
 
@@ -60,7 +71,7 @@ namespace CameraQRPrintSample
                     printSample2s.Add(printSample2);
                 }
                 TextBlock textBlock = pageController.GetTextBlockByName("TextDate");
-                pageController.FillTextBlockWithText(textBlock, DateTime.Now.ToString());
+                pageController.FillTextBlockWithText(textBlock, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 textBlock = pageController.GetTextBlockByName("TextPageNumber");
                 pageController.FillTextBlockWithText(textBlock, printSample2s.Count().ToString());
 

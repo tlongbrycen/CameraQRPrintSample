@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QRScannerUWP;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Capture;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,52 +26,31 @@ namespace CameraQRPrintSample
     /// </summary>
     public sealed partial class CameraSelect : Page
     {
-        List<string> listDeviceID;
+        QRCodeModel qRCodeModel;
 
         public CameraSelect()
         {
             this.InitializeComponent();
+            qRCodeModel = QRCodeModel.GetInstance();
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            await GetCameraListAsync();
-            if (listDeviceID != null)
+            await qRCodeModel.GetCameraListAsync();
+            if (qRCodeModel.listDeviceID != null)
             {
-                ComboBoxCamera.Items.Add(listDeviceID);
+                for (int i = 0; i < qRCodeModel.listDeviceID.Count(); i++)
+                {
+                    ComboBoxCamera.Items.Add(qRCodeModel.listDeviceID[i]);
+                }
             }
         }
 
-        private void ComboBoxCamera_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void ComboBoxCamera_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-        }
-
-        // List all available video capture devices
-        // Ref: https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration.devicewatcher?view=winrt-19041
-        public async Task<bool> GetCameraListAsync()
-        {
-            DeviceWatcher watcher = DeviceInformation.CreateWatcher(DeviceClass.VideoCapture);
-            listDeviceID = new List<string>();
-            var completionSource = new TaskCompletionSource<bool>();
-            // When a device is discovered by the watcher
-            watcher.Added += (DeviceWatcher sender, DeviceInformation device) =>
-            {
-                listDeviceID.Add(device.Id);
-            };
-            // When the enumeration of devices completes
-            watcher.EnumerationCompleted += (DeviceWatcher sender, object args) =>
-            {
-                // This sets the result to QR_RESULT if no task was able to produce a device.
-                completionSource.TrySetResult(true);
-            };
-            // Start watching
-            watcher.Start();
-            // Wait for enumeration to complete or for a device to be found.
-            bool result = await completionSource.Task;
-            // Stop watching
-            watcher.Stop();
-            return result;
+            await qRCodeModel.CleanupCameraAsync();
+            string cameraID = (string)ComboBoxCamera.SelectedItem;
+            await qRCodeModel.CameraUpdateAsync(cameraPreview, cameraID);
         }
     }
 }
