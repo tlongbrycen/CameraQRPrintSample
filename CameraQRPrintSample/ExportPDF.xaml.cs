@@ -138,9 +138,7 @@ namespace CameraQRPrintSample
                     printSample1s.Add(printSample1);
                 }
                 TextBlock textBlock = pageController.GetTextBlockByName("TextDate");
-                pageController.FillTextBlockWithText(textBlock, DateTime.Now.ToString());
-                textBlock = pageController.GetTextBlockByName("TextPageNumber");
-                pageController.FillTextBlockWithText(textBlock, printSample1s.Count().ToString());
+                pageController.FillTextBlockWithText(textBlock, "出力目時 " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
                 textBlock = pageController.GetTextBlockByName("TextJudgment" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, dummyData.crewDatas[i].judgment);
@@ -175,6 +173,12 @@ namespace CameraQRPrintSample
                 textBlock = pageController.GetTextBlockByName("TextMemo" + position.ToString());
                 pageController.FillTextBlockWithText(textBlock, dummyData.crewDatas[i].memo);
 
+            }
+            for(int i = 0; i < printSample1s.Count(); i++)
+            {
+                pageController.SetPage(printSample1s[i]);
+                TextBlock textBlock = pageController.GetTextBlockByName("TextPageNumber");
+                pageController.FillTextBlockWithText(textBlock, (i+1).ToString() + "/" + printSample1s.Count().ToString());
             }
         }
     }

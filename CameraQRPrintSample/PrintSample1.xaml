@@ -32,7 +32,7 @@
         <Grid x:Name="GridHeader" Grid.Row="0">
             <RichTextBlock x:Name="TextHeader" TextWrapping="WrapWholeWords">
                 <Paragraph FontSize="20" TextAlignment="Center">ALBLO</Paragraph>
-                <Paragraph FontSize="18" TextAlignment="Center">測定結果一覧</Paragraph>
+                <Paragraph FontSize="18" TextAlignment="Center">測定結果一覧票</Paragraph>
             </RichTextBlock>
         </Grid>
 
